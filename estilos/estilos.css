@@ -16,7 +16,7 @@
 }
 
 .boton:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #e7ca21; /* Darker green on hover */
 }
 
 .boton:disabled {
@@ -30,4 +30,3 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-
