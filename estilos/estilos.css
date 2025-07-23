@@ -1,0 +1,33 @@
+.boton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    outline: none;
+    box-shadow: 0 9px #999;
+}
+
+.boton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.boton:disabled {
+    background-color: #cccccc; /* Grey */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.boton:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
