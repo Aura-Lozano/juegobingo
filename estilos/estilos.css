@@ -1,3 +1,7 @@
+body {
+    font-family: 'Segoe UI';
+}
+
 .boton {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -16,17 +20,86 @@
 }
 
 .boton:hover {
-    background-color: #e7ca21; /* Darker green on hover */
+    background-color: #e7ca21;
+    /* Darker green on hover */
 }
 
 .boton:disabled {
-    background-color: #cccccc; /* Grey */
+    background-color: #cccccc;
+    /* Grey */
     cursor: not-allowed;
     box-shadow: none;
 }
 
 .boton:active {
-    background-color: #3e8e41; /* Even darker green on click */
-    box-shadow: 0 5px #666;
+    background-color: #3e8e41;
+    /* Even darker green on click */
+    box-shadow: 0 5px #107747;
     transform: translateY(4px);
+}
+
+.cantor {
+    flex: 0 0 300px;
+    /* No crece, no se encoge, tiene un ancho base de 300px */
+    min-width: 280px;
+    /* Ancho mínimo para que no se comprima demasiado */
+    max-width: 350px;
+    /* Ancho máximo, para pantallas grandes */
+    box-sizing: border-box;
+    /* Incluye padding y borde en el ancho */
+    padding-right: 10px;
+    /* Pequeño padding para separar del borde del contenedor */
+
+}
+
+.tablacantor {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.tablaCantor th, 
+.tablaCantor td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    width: calc(100% / 5); /* Para que las columnas tengan el mismo ancho */  
+}
+
+
+.tablaCantor th {
+  background-color: #2f692a;
+  color: white;
+}
+
+.tablaCantor td.sacada {
+  background-color: #032b09;
+  color: white;
+}
+
+.tablaCantor td:not(.sacada) {
+  background-color: #ffffff;
+  color: black;
+}
+
+.ultimaBalota{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #bae6ac;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.numeroBalota{
+    color: #000000;
+    font-size: 1.8em;
 }

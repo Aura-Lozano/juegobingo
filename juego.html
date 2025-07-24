@@ -1,15 +1,47 @@
 <html ng-app="bingo">
+
 <head>
     <title>Bingo</title>
-    <link rel="stylesheet" href="estilos/estilos.css" type="text/css">
+    <link href="estilos/estilos.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="codigo/app.js"></script>
+    <script src="codigo/cantor.js"></script>
 </head>
-<body ng-controller="BingoController">
-    <button class = "boton">
-        Iniciar juego
+
+<body ng-controller="Controladorbingo">
+    <button class="boton" ng-click="iniciarJuego()">
+        Iniciar Juego
     </button>
-    <button class = "boton">
-        Sacar balota
+    <button class="boton" ng-click="sacarBalota()">
+        Sacar Balota
     </button>
+
+    <div class="ultimaBalota">
+        ÚLTIMA BALOTA <span class="numeroBalota"> 
+            {{cantor.ultimaBalota || "Ninguno"}}
+        </span>
+       
+    </div>
+    <div class="cantor">
+        <table class="tablacantor">
+            <thead>
+                <tr>
+                    <th>B</th>
+                    <th>I</th>
+                    <th>N</th>
+                    <th>G</th>
+                    <th>O</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fila in cantor.tabla">
+                    <td ng-repeat="numero in fila" ng-class="{sacada: cantor.balotasSacadas [numero-1]}  ">
+                        {{numero}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
