@@ -103,3 +103,59 @@ body {
     color: #000000;
     font-size: 1.8em;
 }
+
+.tablas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra las tarjetas dentro de su contenedor */ 
+
+    flex: 1; /* Permite que este elemento crezca y ocupe el espacio restante */
+    min-width: 400px; /* Ancho mínimo para las tablas de jugadores */
+    box-sizing: border-box;
+}
+
+.jugador{
+    border: 2px solid #333;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    min-width: 250px;
+    max-width: 300px; /* Limita el ancho de cada tarjeta individual */ 
+}
+
+.jugador table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.jugador th {
+  background-color: #d34d0a;
+  color: white;
+}
+
+.jugador h3{
+    margin-top: 0;
+    color: #032b09;
+}
+
+.panelPrincipal{
+    display: flex; /* Habilitar flexbox */
+    gap: 20px; /* Espacio entre las columnas */
+    margin-top: 20px;
+    align-items: flex-start; /* Alinea los ítems al inicio de la cruz */
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */ 
+}
+
+.jugador td.sacada {
+  background-color: #032b09;
+  color: white;
+}
+
+.jugador td:not(.sacada) {
+  background-color: #ffffff;
+  color: black;
+}

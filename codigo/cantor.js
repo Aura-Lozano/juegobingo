@@ -4,6 +4,7 @@
 
     this.balotasSacadas = new Array(75).fill(false);
     this.ultimaBalota = 0;
+    this.balotasPendientes = 75;
 
     this.tabla = [];
     for (var f = 0; f < 15; f++) {
@@ -15,6 +16,7 @@
     }
     this.iniciar = function () {
         this.balotasSacadas = new Array(75).fill(false);
+        this.balotasPendientes = 75;
     }
     this.sacarBalota = function () {
         let totalSacadas = this.balotasSacadas.filter(valor => valor == true).length;
@@ -26,11 +28,15 @@
 
             this.balotasSacadas[balota - 1] = true;
             this.ultimaBalota = balota;
+            this.balotasPendientes = 75-totalSacadas-1;
         }
         else {
             window.alert("Ya se acabaron las balotas");
         }
     }
+  
+        
+    
 }
    
 

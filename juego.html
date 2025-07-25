@@ -6,9 +6,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="codigo/app.js"></script>
     <script src="codigo/cantor.js"></script>
+    <script src="codigo/tabla.js"></script>
 </head>
 
-<body ng-controller="Controladorbingo"> 
+<body ng-controller="Controladorbingo">
     <button class="boton" ng-click="iniciarJuego()">
         Iniciar Juego
     </button>
@@ -17,11 +18,15 @@
     </button>
 
     <div class="ultimaBalota">
-        ÚLTIMA BALOTA <span class="numeroBalota"> 
+        ÚLTIMA BALOTA <span class="numeroBalota">
             {{cantor.ultimaBalota || "Ninguno"}}
         </span>
-       
+        Balotes restantes: <span class="balotasPedientes">
+            {{cantor.balotasPendientes || "Ninguno"}}
+        </span>
+
     </div>
+<div class="panelPrincipal"> 
     <div class="cantor">
         <table class="tablacantor">
             <thead>
@@ -42,6 +47,33 @@
             </tbody>
         </table>
     </div>
+
+    <div class="tablas">
+        <div class="jugador" ng-repeat="jugador in jugadores">
+            <h3>{{jugador.nombre}}</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>B</th>
+                        <th>I</th>
+                        <th>N</th>
+                        <th>G</th>
+                        <th>O</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="fila in jugador.tablaJugador.tabla track by $index">
+                        <td ng-repeat="numero in fila track by $index" ng-class="{sacada: jugador.tablaJugador.tapada[$parent.$index][$index]}  ">
+                            {{ numero }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
 </body>
 
 </html>
