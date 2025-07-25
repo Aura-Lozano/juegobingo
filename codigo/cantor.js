@@ -1,4 +1,6 @@
-function Cantor() {
+
+
+    function Cantor() {
 
     this.balotasSacadas = new Array(75).fill(false);
     this.ultimaBalota = 0;
@@ -18,7 +20,7 @@ function Cantor() {
         let totalSacadas = this.balotasSacadas.filter(valor => valor == true).length;
         if (totalSacadas < 75) {
             let balota = Math.floor(Math.random() * 75) + 1;
-            while (this.balotasSacadas(balota - 1)) {
+            while (this.balotasSacadas[balota - 1]) {
                 balota = Math.floor(Math.random() * 75) + 1;
             }
 
@@ -30,3 +32,7 @@ function Cantor() {
         }
     }
 }
+   
+
+
+   
