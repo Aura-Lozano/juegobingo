@@ -21,10 +21,12 @@
         ÚLTIMA BALOTA <span class="numeroBalota">
             {{cantor.ultimaBalota || "Ninguno"}}
         </span>
-        Balotes restantes: <span class="balotasPedientes">
+        BALOTAS RESTANTES <span class="balotasPedientes">
             {{cantor.balotasPendientes || "Ninguno"}}
         </span>
-
+        <span ng-if="posicionGanador!=1">
+        EL GANADOR ES EL {{ jugadores[posicionGanador].nombre }}
+        </span>
     </div>
 <div class="panelPrincipal"> 
     <div class="cantor">
@@ -51,6 +53,7 @@
     <div class="tablas">
         <div class="jugador" ng-repeat="jugador in jugadores">
             <h3>{{jugador.nombre}}</h3>
+                <span ng-if="jugador.ganador">¡BINGO!</span>
             <table>
                 <thead>
                     <tr>
