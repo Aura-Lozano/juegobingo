@@ -9,9 +9,9 @@ function Tabla() {
             if (!(c == 2 && f == 2))
                 this.tabla[f][c] = c * 15 + Math.floor(Math.random() * 15) + 1;
             else {
-                this.tabla[f][c] = 0;
+                this.tabla[f][c] = "LIBRE";
             }
-            this.tapada[f][c] = false;
+            this.tapada[f][c] = true;
         }
 
     }

@@ -17,6 +17,7 @@
     this.iniciar = function () {
         this.balotasSacadas = new Array(75).fill(false);
         this.balotasPendientes = 75;
+        this.ultimaBalota = 0;
     }
     this.sacarBalota = function () {
         let totalSacadas = this.balotasSacadas.filter(valor => valor == true).length;

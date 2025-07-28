@@ -5,6 +5,8 @@ angular.module("bingo", [])
 
             $scope.cantor = new Cantor();
             $scope.jugadores = [];
+
+            $scope.juegoIniciado = false;
        
                 $scope.iniciarJuego = function () {
                 const totalJugadores = 7;
@@ -16,6 +18,8 @@ angular.module("bingo", [])
                         ganador: false,
                     });
                 }
+                $scope.juegoIniciado = true;
+                $scope.cantor.iniciar();
             }
 
             $scope.sacarBalota = function () {
@@ -23,6 +27,11 @@ angular.module("bingo", [])
 
                 for(i=0;i<$scope.jugadores.length; i++)
                     $scope.jugadores[i].tablaJugador.taparNumero($scope.cantor.ultimaBalota);
+
+                if ($scope.cantor.balotasPendientes == 0){
+                    $scope.juegoIniciado = false;
+              
+                }
 
             }
 

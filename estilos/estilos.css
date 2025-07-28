@@ -133,7 +133,7 @@ body {
 }
 
 .jugador th {
-  background-color: #d34d0a;
+  background-color: #30913d;
   color: white;
 }
 
@@ -150,12 +150,12 @@ body {
     flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */ 
 }
 
-.jugador td.sacada {
+.jugador td.tapada {
   background-color: #032b09;
   color: white;
 }
 
-.jugador td:not(.sacada) {
+.jugador td:not(.tapada) {
   background-color: #ffffff;
   color: black;
 }
